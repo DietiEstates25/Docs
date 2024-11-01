@@ -1,8 +1,9 @@
+\usepackage[table]{xcolor} % Required for specifying colors by name and for table colors
 \usepackage[left=2cm, right=2cm, bottom=3cm, top=3cm]{geometry}
 \usepackage[onehalfspacing]{setspace}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} % Used to insert images
-\usepackage{float} %Package for using the [H] option on graphics to force them into place
+\usepackage{float} % Package for using the [H] option on graphics to force them into place
 \usepackage{enumerate} % Needed for markdown enumerations to work
 \usepackage{url}
 \usepackage[nohyperlinks]{acronym}
@@ -11,11 +12,9 @@
 \usepackage{pgfplots}
 \usepackage{todonotes}
 \usepackage{lipsum}
-\usepackage{graphicx}  % Required for including images
 \usepackage{fancyhdr}  % Headers and footers
 \pagestyle{fancy} % All pages have headers and footers
 \usepackage[italian]{babel} % Italian language
-\usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage{amsmath, amssymb, amsthm, amsfonts} % Required for math
 \usepackage{mathtools} % Required for math
 \usepackage[hidelinks]{hyperref} % Required for links
@@ -23,11 +22,9 @@
 \usepackage{titlesec} % Required for titles
 \usepackage[most]{tcolorbox} % Required for boxes
 \usepackage{tabularx} % Required for tables
-\usepackage{colortbl} % Change color of table elements
 \usepackage{ifthen} % Required for if-then-else
 \usepackage{xargs} % Required for more than one optional parameter in new commands
 \usepackage{soul} % Required for fancy text highlighting
-\usepackage{float} % Required for forcing floating objects in position
 \usepackage{listings, lstautogobble, lstfiracode} % Required for code listings
 \usepackage[no-math]{fontspec} % Required for custom font
 
@@ -101,6 +98,7 @@
 
 
 \newcommandx{\customTableLogic}[6][2={},3={}]{
+  \rowcolors{1}{PRIMARY}{SECONDARY}
   \begin{table}[H]
     \ifthenelse{\equal{#3}{}}{}{\label{#3}}
   \centering
