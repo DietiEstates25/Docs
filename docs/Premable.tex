@@ -36,9 +36,11 @@
 
 % ============= Colors =============
 % Default color
-\definecolor{PRIMARY}{HTML}{cc4400}
-\definecolor{SECONDARY}{HTML}{f7dba7}
-\definecolor{TERTIARY}{HTML}{282A37}
+\definecolor{PRIMARY}{HTML}{0D1B2A}
+\definecolor{SECONDARY}{HTML}{F18F01}
+\definecolor{TERTIARY}{HTML}{4A8FE7}
+\definecolor{BG1}{HTML}{F9F7F3}
+\definecolor{BG2}{HTML}{ADADAD}
 \definecolor{CONTRAST}{HTML}{6C8EBF}
 \definecolor{NEWGREEN}{HTML}{228231} 
 \definecolor{NEWPINK}{HTML}{FC79C6}
@@ -98,7 +100,7 @@
 
 
 \newcommandx{\customTableLogic}[6][2={},3={}]{
-  \rowcolors{1}{PRIMARY}{SECONDARY}
+  \rowcolors{1}{BG1}{BG2}
   \begin{table}[H]
     \ifthenelse{\equal{#3}{}}{}{\label{#3}}
   \centering
