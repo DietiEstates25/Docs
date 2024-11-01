@@ -5,22 +5,46 @@
 \usepackage{float} %Package for using the [H] option on graphics to force them into place
 \usepackage{enumerate} % Needed for markdown enumerations to work
 \usepackage{url}
-\usepackage{hyperref}
 \usepackage[nohyperlinks]{acronym}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage[]{xcolor}
 \usepackage{footnote}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{todonotes}
 \usepackage{lipsum}
+\usepackage{graphicx}  % Required for including images
+\usepackage{fancyhdr}  % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\usepackage[italian]{babel} % Italian language
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage{amsmath, amssymb, amsthm, amsfonts} % Required for math
+\usepackage{mathtools} % Required for math
+\usepackage[hidelinks]{hyperref} % Required for links
+\usepackage{afterpage} % Required for color pages 
+\usepackage{titlesec} % Required for titles
+\usepackage[most]{tcolorbox} % Required for boxes
+\usepackage{tabularx} % Required for tables
+\usepackage{colortbl} % Change color of table elements
+\usepackage{ifthen} % Required for if-then-else
+\usepackage{xargs} % Required for more than one optional parameter in new commands
+\usepackage{soul} % Required for fancy text highlighting
+\usepackage{float} % Required for forcing floating objects in position
+\usepackage{listings, lstautogobble, lstfiracode} % Required for code listings
+\usepackage[no-math]{fontspec} % Required for custom font
 
 \bibliographystyle{ieeetr}
 
 \pgfplotsset{compat=1.18}
 
 \setlength{\marginparwidth}{2cm}
+
+% ============= Colors =============
+% Default color
+\definecolor{PRIMARY}{HTML}{cc4400}
+\definecolor{SECONDARY}{HTML}{f7dba7}
+\definecolor{TERTIARY}{HTML}{282A37}
+\definecolor{CONTRAST}{HTML}{6C8EBF}
+\definecolor{NEWGREEN}{HTML}{228231} 
+\definecolor{NEWPINK}{HTML}{FC79C6}
 
 % ============= No massive space betweend headline and chapter titel =============
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-.4cm}}
@@ -50,3 +74,42 @@
 \setkomafont{subsubsection}{\normalsize}
 \setkomafont{paragraph}{\normalsize}
 \setkomafont{subparagraph}{\small}
+
+% ============= Custom Tables ============
+
+% Custom table definition
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommandx{\customTable}[5][2={},3={}]{
+  \renewcommand{\arraystretch}{1.9}
+  \arrayrulecolor{PRIMARY}
+  \begin{table}[H]
+    \ifthenelse{\equal{#3}{}}{}{\label{#3}}
+    \centering
+    \begin{tabularx}{\textwidth}{#1}
+    \hline
+    \rowcolor{SECONDARY} #4 \\
+    \hline
+    #5
+    \hline
+    \end{tabularx}
+    \ifthenelse{\equal{#2}{}}{}{\caption{#2}}
+  \end{table}
+} 
+  % Invoke this as \customTable{table format}[table caption][table label]{table head}{table content}
+  % table head should be a list of column names separated by &
+  % the arguments in square brackets are optional, if you don't need them square brackets can be omitted
+
+
+\newcommandx{\customTableLogic}[6][2={},3={}]{
+  \begin{table}[H]
+    \ifthenelse{\equal{#3}{}}{}{\label{#3}}
+  \centering
+  \begin{tabularx}{\textwidth}{#1}
+    \hline
+    \multicolumn{#4}{|c|}{\large\textbf{#5}} \\
+    \hline
+    #6 \\
+    \hline
+  \end{tabularx}
+\end{table}
+}

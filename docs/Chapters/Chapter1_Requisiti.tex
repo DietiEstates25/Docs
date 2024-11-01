@@ -2,3 +2,58 @@
 \label{cha:Documento dei Requisiti Software}
 
 \lipsum[1-4]
+
+\customTable{cYY}[Dizionario delle classi Prima Parte][tableTest]{\textbf{Classe} & \textbf{Descrizione} & \textbf{Attributi}}{
+  \textbf{Account} & Generico utente che utilizza il sistema per effettuare ordini. & 
+  {\footnotesize 
+  \textbf{Name:} (\textit{string}): Nome dell'utente;
+  
+  \textbf{Surname} (\textit{string}): Cognome dell'utente;
+  
+  \textbf{Email} (\textit{string}): Chiave Primaria. Email dell'utente;
+
+  \textbf{Birthdate} (\textit{date}): Data di nascita dell'utente;
+
+  \textbf{ProPic} (\textit{string}): Eventuale immagine profilo dell'utente;
+
+  \textbf{Password} (\textit{string}): Password dell'utente;  
+  }\\
+
+
+  \textbf{Operator} & Account di un impiegato che si occupa di creare le spedizioni. &
+  {\footnotesize
+  \textbf{BusinessMail} (\textit{string}): Chiave Primaria. Email aziendale dell'operatore;
+  }\\
+
+
+  \textbf{Driver} & Account di un autista che si occupa di effettuare le consegne. &
+  {\footnotesize
+  \textbf{BusinessMail} (\textit{string}): Chiave Primaria. Email aziendale dell'autista;
+
+  \textbf{DrivingLincenceType} (\textit{DrivingLincenceType}): Tipologia di patente dell'autista;
+  }\\
+
+
+  \textbf{Order} & Ordine effettuato da un utente. Può contenere più prodotti e può essere spedito in più spedizioni. &
+  {\footnotesize
+  \textbf{OrderID} (\textit{integer}): Chiave Surrogata. Identificativo dell'ordine;
+
+  \textbf{EmissionDate} (\textit{date}): Data di emissione dell'ordine;
+
+  \textbf{IsExpress} (\textit{bool}): Indica se l'ordine è espresso o meno;
+
+  \textbf{ExtraWarranty} (\textit{bool}): Indica se è stata acquistata una garanzia extra o meno;
+
+  \textbf{Quantity} (\textit{integer}): Quantità di prodotti acquistati;
+
+  \textbf{IsCompleted} (\textit{bool}): Indica se l'ordine è stato completato o meno;
+  }\\
+
+
+  \textbf{Shipment} & Singola spedizione partita da un deposito. Può contenere più ordini e può raggiungere a più utenti o a un deposito. &
+  {\footnotesize
+  \textbf{ShipmentID} (\textit{integer}): Chiave Surrogata. Identificativo della spedizione; 
+
+  \textbf{ShippingDate} (\textit{date}): Data della spedizione;
+  }\\  
+}

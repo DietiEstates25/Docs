@@ -1,7 +1,6 @@
 \documentclass[a4paper,12pt,numbers=noenddot]{scrreprt}
 \input{Premable}
 \input{Settings}
-\usepackage[english]{babel}
 
 
 
@@ -16,7 +15,7 @@
 \setcounter{tocdepth}{1} 
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents{}
-\cleardoubleemptypage
+\cleardoubleemptypage{}
 \pagenumbering{arabic} 
 
 \pagestyle{icmt-fancy}
@@ -30,20 +29,20 @@
 
 \bibliography{Bibliography}
 \addcontentsline{toc}{chapter}{\bibname}
-\cleardoubleemptypage
+\cleardoubleemptypage{}
 
 \listoffigures
 \addcontentsline{toc}{chapter}{\listfigurename}
-\cleardoubleemptypage
+\cleardoubleemptypage{}
 
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}
-\cleardoubleemptypage
+\cleardoubleemptypage{}
 
 \chapter*{Acronyms}
 \input{Acronym}
 \addcontentsline{toc}{chapter}{Acronyms}
-\cleardoubleemptypage
+\cleardoubleemptypage{}
 
 \include{Chapters/Credits}
 
